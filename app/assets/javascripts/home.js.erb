@@ -1,16 +1,37 @@
 
 $(document).ready(function(){
-    console.log("document loaded!!!!");
-    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
-    function(json){
-      $('#quote').html(json.quoteText);
-      if(json.quoteAuthor == ""){
-        json.quoteAuthor="Unknown";
-      }
-      $('#author').html(json.quoteAuthor);
-      console.log(json);
+    // console.log("document loaded!!!!");
+    function new_quote(){
+      $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
+      function(json){
+        $('#quote').html(json.quoteText);
+        if(json.quoteAuthor == ""){
+          json.quoteAuthor="Unknown";
+        }
+        $('#author').html(json.quoteAuthor);
 
+      });
+    };
+    new_quote();
+
+    $('#new_quote').click(function(){
+      new_quote();
     });
+
+
+
+    // $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
+    // function(json){
+    //   $('#quote').html(json.quoteText);
+    //   if(json.quoteAuthor == ""){
+    //     json.quoteAuthor="Unknown";
+    //   }
+    //   $('#author').html(json.quoteAuthor);
+    //
+    // });
+
+
+
   // $.ajax({
   //     url: "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en",
   //     method: 'GET',
