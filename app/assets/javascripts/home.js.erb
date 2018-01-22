@@ -1,0 +1,70 @@
+
+$(document).ready(function(){
+    console.log("document loaded!!!!");
+    $.getJSON("https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?",
+    function(json){
+      $('#quote').html(json.quoteText);
+      if(json.quoteAuthor == ""){
+        json.quoteAuthor="Unknown";
+      }
+      $('#author').html(json.quoteAuthor);
+      console.log(json);
+
+    });
+  // $.ajax({
+  //     url: "http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en",
+  //     method: 'GET',
+  //     // dataType: "jsonp",
+  //     // headers: {
+  //     //    'method': 'getQuote',
+  //     //    'format':'jsonp',
+  //     //    'lang': 'eng',
+  //     // },
+  //     success: function(data) {
+  //       console.log("successfull!!!");
+  //       // $('#quote').html(data.quote)
+  //       // $('#author').html(data.author)
+  //     },
+  //     error: function(xhr, status, p3, p4){
+  //       console.debug(xhr);
+  //               var err = "Error " + " " + status + " " + p3;
+  //               if (xhr.responseText && xhr.responseText[0] == "{")
+  //                   err = JSON.parse(xhr.responseText).message;
+  //               alert(err);
+  //     }
+  // });
+
+
+  // $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=jsonp&lang=en", function(val){ console.log(val);$("div").html(JSON.stringify(val)); }
+  // );
+
+
+
+
+
+
+
+  // $.ajax({
+  //     url: "https://andruxnet-random-famous-quotes.p.mashape.com",
+  //     method: 'GET',
+  //     dataType: 'json',
+  //     headers: {
+  //        'X-Mashape-Key': 'cxnre6Im5EmshwnB2qrl7H0G0djGp1rSJ8jjsn4UncZyiLOw8x',
+  //        'cat':'famous',
+  //        'Content-type': 'application/x-www-form-urlencoded',
+  //        'Accept': 'application/json'
+  //     },
+  //     crossDomain: true,
+  //     success: function(data) {
+  //       $('#quote').html(data.quote)
+  //       $('#author').html(data.author)
+  //     },
+  //     error: function(xhr, status, p3, p4){
+  //       console.debug(xhr);
+  //               var err = "Error " + " " + status + " " + p3;
+  //               if (xhr.responseText && xhr.responseText[0] == "{")
+  //                   err = JSON.parse(xhr.responseText).message;
+  //               alert(err);
+  //     }
+  // });
+});
