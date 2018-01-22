@@ -1,3 +1,57 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div#content{
+    // height: 100vh;
+    width:100vh;
+    display: flex;
+    flex-direction: column;
+    // margin: 30px;
+    // background-color: grey;
+    // padding: 20px;
+    #quote{
+          min-height: 30vh;
+      padding: 20px;
+      font-size: 30px;
+      background-color: #D3D3D3;
+      // flex-grow: 1;
+    }
+    #outer_author{
+      display: flex;
+      justify-content: flex-end;
+      #author{
+        padding: 30px;
+        font-size: 25px;
+        display: inline-block;
+        width: inherit;
+        justify-content: flex-end;
+        background-color: #9E9E9E;
+
+      }
+    }
+
+
+    #toolbar{
+      box-sizing: border-box;
+      width: inherit;
+      padding: 15px;
+      // background-color: red;
+      z-index: 1;
+      position: absolute;
+      bottom: 10px;
+    }
+
+  }
+
+}
