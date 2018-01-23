@@ -20,13 +20,29 @@ body{
     // margin: 30px;
     // background-color: grey;
     // padding: 20px;
-    #quote{
-          min-height: 30vh;
-      padding: 20px;
-      font-size: 30px;
-      background-color: #D3D3D3;
-      // flex-grow: 1;
+    #outer_quote{
+      display: flex;
+      flex-direction: row-reverse;
+      position: relative;
+      #quote{
+        flex-grow: 1;
+        min-height: 30vh;
+        padding: 20px;
+        font-size: 30px;
+        background-color: #D3D3D3;
+        // flex-grow: 1;
+      }
+      #next_arrow{
+        cursor: pointer;
+        justify-content: flex-end;
+        height: 50px;
+        // width: 50px;
+        position: absolute;
+        right: -100px;
+        top: 100px;
+      }
     }
+
     #outer_author{
       display: flex;
       justify-content: flex-end;
@@ -53,5 +69,7 @@ body{
     }
 
   }
+
+
 
 }
