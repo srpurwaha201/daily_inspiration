@@ -15,7 +15,8 @@ body{
   align-items: center;
   div#content{
     // height: 100vh;
-    width:100vh;
+    // width:100vh;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     // margin: 30px;
@@ -28,16 +29,19 @@ body{
       #quote{
         flex-grow: 1;
         min-height: 30vh;
+        min-width: 15vw;
+        // min-height: calc(5vh + 15vw);
         padding: 20px;
         // font-size: 30px;
         background-color: #D3D3D3;
         font-size: calc(1.3vw + 1.3vh + 0.75vmin);
         // flex-grow: 1;
       }
-      #next_arrow{
+      .next_arrow{
         cursor: pointer;
         justify-content: flex-end;
-        height: 50px;
+        // height: 50px;
+        height: 7vh;
         // width: 50px;
         position: absolute;
         right: -100px;
@@ -62,17 +66,75 @@ body{
 
 
     #toolbar{
+      display: flex;
       box-sizing: border-box;
       width: inherit;
       padding: 15px;
+      justify-content: center;
       // background-color: red;
       z-index: 1;
-      position: absolute;
+      // position: absolute;
       bottom: 10px;
+      .next_arrow{
+        cursor: pointer;
+        transform: rotate(90deg);
+        // display: none;
+        visibility: hidden;
+        // justify-content: center;
+        // height: 50px;
+        height: 7vh;
+        // width: 50px;
+        // position: absolute;
+        // right: -100px;
+        // top: 100px;
+      }
     }
 
   }
 
+
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+  body{
+    margin-top: 10vh;
+    height: 50vh;
+
+    display: block;
+    div#content{
+      width: 100vw;
+      #outer_quote{
+        #quote{
+          font-size: calc(2vw + 2vh + 1vmin);
+        }
+        .next_arrow{
+          display: none;
+        }
+
+      }
+      #outer_author{
+        #author{
+          font-size: calc(2vw + 2vh + 1vmin);
+        }
+        width: 100vw;
+      }
+      #toolbar{
+        padding: 10vh;
+        .next_arrow{
+          visibility: visible;
+          height: 10vh;
+          position: fixed;
+          bottom: 10vh;
+        }
+      }
+    }
+    #next_arrow{
+      display: none;
+    }
+  }
 
 
 }
